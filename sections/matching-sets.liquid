@@ -1,0 +1,168 @@
+<div class="matching-first">
+  <div class="best matching-first-first">
+    <img class="desktop" src="{{ 'make-a-splash-desktop.png' | asset_url }}" alt="Chill In">
+    <img class="mobile" src="{{ 'make-a-splash-mobile.png' | asset_url }}" alt="Chill In">
+  </div>
+
+  <div class="best matching-first-second ">
+    <div class="best-in-text">
+      <h1>MAKE A SPLASH</h1>
+      <p>Keep your phone safe and dry wherever the day takes you.</p>
+      <a href="/collections/phone-dry-bags">
+        SHOP NOW
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+          <path d="M15 7.1665L18.3333 10.4998L15 13.8332" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1.66663 10.5H18.3333" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Matching Sets",
+  "settings": [],
+   "presets": [{
+  "name": "Matching Sets"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+    .matching-first {
+      display: flex;
+      gap: 0px;
+      padding-top:60px;
+    }
+
+  .matching-first img{
+    width: 100%;
+  }
+
+
+  .matching-first-second {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: #191919;
+    padding: 0px 40px;
+  }
+
+  .matching-first-second .best-in-text{
+      max-width: 410px;
+  }
+
+  .matching-first .matching-first-second .best-in-text h1 {
+    text-align: left;
+    color: #FFF;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    font-family: Archivo-Medium;
+    /* 72px */
+  }
+
+  .matching-first .matching-first-second .best-in-text p {
+    text-align: left;
+    padding: 5px 0 32px;
+    color: var(--actually-white, #FFF);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    font-family: Archivo-Medium;
+    /* 36px */
+  }
+
+  .matching-first .matching-first-second .best-in-text a {
+    display: inline-flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: var(--black, #191919);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 36px;
+    border-radius: 44px;
+    border: 1px solid var(--actually-white, #FFF);
+    background: var(--actually-white, #FFF);
+    text-transform: uppercase;
+    font-family: Archivo-Medium;
+  }
+
+  @media(min-width: 1024px) and (max-width:1200px){
+    .matching-first-second .best-in-text {
+        max-width: 100%;
+    }
+
+    .matching-first .matching-first-second .best-in-text h1{
+      font-size: 36px;
+    }
+
+    .matching-first .matching-first-second .best-in-text p {
+        font-size: 14px;
+    }
+  }
+
+  @media(min-width: 769px) and (max-width:1023px){
+    .matching-first {
+      display: block;
+    }
+
+    .matching-first-second .best-in-text {
+        max-width: 375px;
+    }
+
+    .matching-first .matching-first-second {
+      padding: 48px 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .matching-first {
+      padding-top:30px;
+    }
+    .matching-first {
+      display: block;
+    }
+
+    .matching-first-second .best-in-text {
+        max-width: 340px;
+    }
+
+    .matching-first .matching-first-second {
+      padding: 48px 24px;
+    }
+
+    .matching-first .matching-first-second .best-in-text a {
+      font-size: 14px;
+    }
+
+    .matching-first .matching-first-second .best-in-text h1 {
+      font-size: 24px;
+      font-weight: 700 !important;
+    }
+
+    .matching-first .matching-first-second .best-in-text p {
+      font-size: 14px;
+      padding: 5px 0 16px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .matching-first-first{
+      width:65%;
+    }
+    .matching-first {
+      padding-top:60px;
+    }
+    .matching-first-second{
+      width:35%;
+    }
+  }
+{% endstylesheet %}

@@ -1,0 +1,45 @@
+{% if product.metafields.custom.activity_icons %}
+<div class="sf-custom sf-section-padding product-activities">
+  <div class="w-full section-my">
+    <div class="sf-custom__grid flex flex-wrap">
+      <div class="sf-custom__block  sf-custom__block--text flex lg:w-1/4 md:w-1/2 w-full items-center">
+        <div class="sf-custom__block-inner w-full">
+          <div class="text-left px-4 md:px-0">
+            <h3 class="content__heading text-2xl text-black lg:text-5xl sm:text-4xl">TAKE IT
+            <br>ANYWHERE</h3>
+          </div>
+        </div>
+      </div>
+      <div class="sf-custom__block  sf-custom__block--html flex lg:w-3/4 w-full items-">
+        <div class="sf-custom__block-inner w-full">
+          <div class="activitySlider-boxes-inner">
+            <div class="owl-carousel owl-theme" id="activitySlider">
+                {% for image in product.metafields.custom.activity_icons.value %}
+                  <div class="item">
+                    {{ image.src | image_url: width: '1000' | image_tag: loading: 'lazy' }}
+                    <h1>{{ image.alt }}</h1>
+                  </div>
+                {% endfor %}
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% schema %}
+{
+  "name": "Activities Product",
+  "settings": [],
+   "presets": [{
+  "name": "Activities Product"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

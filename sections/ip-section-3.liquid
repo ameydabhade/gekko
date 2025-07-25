@@ -1,0 +1,90 @@
+<script>
+this.variantData = '';
+</script>
+{%- liquid
+  assign bg_color = section.settings.background_color
+  assign has_bg = false
+
+  unless bg_color == "rgba(0,0,0,0)" or bg_color == blank
+  assign has_bg = true
+  endunless
+
+  assign image_ratio = section.settings.pcard_image_ratio
+  assign show_vendor = section.settings.show_vendor
+  assign pcard_alignment = section.settings.pcard_alignment
+  assign card_style = section.settings.pcard_layout
+-%}
+
+<div class="ipx-slider-boxes">
+  <div class="">
+    <div class="ipx-slider-boxes-inner">
+      <div class="ipx-4 ipx-slider-boxes-inner-detail">
+        <h4>IPX4</h4>
+          {% assign collection_handle = 'ipx4' %}
+          <div class="gecko-accessories">
+            <div class="gecko-accessories-slider owl-carousel owl-theme ipxSliderbox">   
+              {% for rec_product in collections[collection_handle].products  %}
+              <div class="lg:px-5 inner-ipx-box-slider">
+        	      {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+        	    </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+
+      <div class="ipx-5 ipx-slider-boxes-inner-detail">
+        <h4>IPX5</h4>
+          {% assign collection_handle = 'ipx5' %}
+          <div class="gecko-accessories">
+            <div class="gecko-accessories-slider owl-carousel owl-theme ipxSliderbox">   
+              {% for rec_product in collections[collection_handle].products  %}
+              <div class="lg:px-5 inner-ipx-box-slider">
+        	      {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+        	    </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+
+      <div class="ipx-6 ipx-slider-boxes-inner-detail">
+        <h4>IPX6</h4>
+          {% assign collection_handle = 'ipx6' %}
+          <div class="gecko-accessories">
+            <div class="gecko-accessories-slider owl-carousel owl-theme ipxSliderbox">   
+              {% for rec_product in collections[collection_handle].products  %}
+              <div class="lg:px-5 inner-ipx-box-slider">
+        	      {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+        	    </div>
+              {% endfor %}
+            </div>
+      </div>
+    </div>
+
+      <div class="ipx-8 ipx-slider-boxes-inner-detail">
+        <h4>IPX8</h4>
+          {% assign collection_handle = 'ipx-8' %} 
+          <div class="gecko-accessories">
+            <div class="gecko-accessories-slider owl-carousel owl-theme ipxSliderbox">   
+              {% for rec_product in collections[collection_handle].products  %}
+              <div class="lg:px-5 inner-ipx-box-slider">
+        	      {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+        	    </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    </div>
+  </div>
+{% schema %}
+{
+    "name": "Ip Slider",
+    "settings": [],
+     "presets": [{
+    "name": "Ip slider"
+  }]
+}
+{% endschema %}
+  

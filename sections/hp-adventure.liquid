@@ -1,0 +1,144 @@
+<div class="hp-advanture home-custom-fslider slideroption-new">
+  <div class="hp-advanture-inner">
+    <h2>What’s Your Next Adventure?</h2>
+     <div class="owl-carousel owl-theme hpAdvanture">
+        <div class="item">
+           <a href="/collections/hiking">
+            <img src="{{ 'hiking-24..png' | asset_url }}" alt="Browse Collections">
+             <div class="overlay-content">
+               <p>Hiking</p>
+             </div>
+           </a>
+        </div> 
+
+        <div class="item">
+           <a href="/collections/kayaking">
+            <img src="{{ 'kayaking-24.png' | asset_url }}" alt="Browse Collections">
+             <div class="overlay-content">
+               <p>Kayaking</p>
+             </div>
+           </a>
+        </div>
+
+       <div class="item">
+           <a href="/collections/paddleboarding">
+            <img src="{{ 'paddleboarding-24.png' | asset_url }}" alt="Browse Collections">
+             <div class="overlay-content">
+               <p>PaddleBoarding</p>
+             </div>
+           </a>
+        </div> 
+       
+      <div class="item">
+           <a href="/collections/fishing">
+            <img src="{{ 'fishing-24.png' | asset_url }}" alt="Browse Collections">
+             <div class="overlay-content">
+               <p>Fishing</p>
+             </div>
+           </a>
+        </div> 
+       <div class="item">
+           <a href="/collections/camping">
+            <img src="{{ 'camping-24.png' | asset_url }}" alt="Browse Collections">
+             <div class="overlay-content">
+               <p>Camping</p>
+             </div>
+           </a>
+        </div> 
+
+        <div class="item">
+           <a href="/collections/jet-skiing">
+            <img src="{{ 'jet skiing-24.png' | asset_url }}" alt="Browse Collections">
+             <div class="overlay-content">
+               <p>Jet Skiing</p>
+             </div>
+           </a>
+        </div> 
+
+     </div>
+    <span id="slider-counter"></span>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Hp Advanture",
+  "settings": [],
+   "presets": [{
+  "name": "Hp Advanture"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+  $('.hpAdvanture').owlCarousel({    
+          nav: true, 
+          navText: ["<img src='https://cdn.shopify.com/s/files/1/0683/7741/1865/files/west-arrow.png'>","<img src='https://cdn.shopify.com/s/files/1/0683/7741/1865/files/east-arrow.png'>"], 
+          margin: 30, 
+          dots: true,  
+          stagePadding: 70,    
+          items: 4,         
+          loop: false,   
+          autoplay: false, 
+          dotsEach: true, 
+          responsiveClass: true,
+          onInitialized:advCounter,
+          onTranslated:advCounter, 
+          responsive: {  
+              0: { 
+                  items: 1,  
+                  margin: 15, 
+                  autoplay: false, 
+                  stagePadding: 30      
+              },  
+              570: { 
+                  items: 2,
+                  margin: 15, 
+                  autoplay: false, 
+                  stagePadding: 30      
+              },
+              768: {  
+                  items: 2, 
+                  margin: 20, 
+                  stagePadding: 40      
+              },
+              1023: {  
+                  items: 4
+              },
+	          onInitialized : function(){ 
+	              if($('.owl-item').first().hasClass('active'))
+	                  $('.owl-prev').hide();
+	              else
+	                  $('.owl-prev').show();
+	          }
+          }
+        });
+         
+        function advCounter(event) { 
+            var element = event.target;
+            var items = event.item.count; 
+            var item = event.item.index + 1; 
+            if(window.outerWidth > 1023) { 
+              $('.hp-advanture #slider-counter').html(""+item+" / 3");   
+            }
+            else if (window.outerWidth < 570) { 
+              $('.hp-advanture #slider-counter').html(""+item+" / "+items);   
+            }  
+ 
+            else if (window.outerWidth > 571 && window.outerWidth < 1022) {    
+              $('.hp-advanture #slider-counter').html(""+item+" / 5");        
+            } 
+ 
+          }  
+
+        setTimeout(function() {  
+          jQuery(".hp-advanture #slider-counter").detach().appendTo('.hp-advanture .owl-nav');
+        }, 1000); 
+  
+        setTimeout(function() {  
+          jQuery(".hp-advanture .hpAdvanture .owl-dots").detach().appendTo('.hp-advanture .owl-nav');  
+        }, 1000);
+      
+{% endjavascript %}

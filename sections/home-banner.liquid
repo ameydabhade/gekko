@@ -1,0 +1,165 @@
+<div class="home-top-banner hp-banner-sep hp-seas-banner">
+  <a href="/collections/backpacks">
+    <div class="home-top-banner-inner sf-hero__inner">
+      <img class="desktop" src="{{ 'best-in-class-desktop3.png' | asset_url }}">
+      <img class="mobile" src="{{ 'best-in-class-mobile2.png' | asset_url }}">
+      <div class="home-top-banner-overlay sf-hero__content">
+        <h3>BEST-IN-CLASS</h3>
+        <p>Weekend hikes or work commutes, these backpacks are made for any activity. <span> 15% off sitewide with code SCHOOL15.</span></p>
+        <button class="btn-seas" href="/collections/backpacks">
+          SHOP BACKPACKS
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M15 6.66663L18.3333 9.99996L15 13.3333" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1.66675 10H18.3334" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </a>
+</div>
+{% schema %}
+{
+  "name": "Home Banner",
+  "settings": [],
+   "presets": [{
+  "name": "Home banner"
+}]
+}
+{% endschema %}
+
+<style>
+   .home-top-banner.hp-seas-banner .home-top-banner-overlay {
+    position: absolute;
+    right: 60px;  
+    left: auto; 
+    z-index: 10;
+    width: 450px;
+    bottom: 60px;
+    top: auto;
+    transform: none;
+    text-align: left;
+  }
+
+  .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content h3{
+    color: #191919;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 60px */
+    letter-spacing: -3px;
+    text-transform: uppercase;
+  }
+
+  .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content p{
+    color: #191919;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    margin: 4px 0px 32px 0px;
+  }
+
+  .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content p span{
+    color: #191919;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    display: block !important;
+  }
+
+  .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content .btn-seas{
+    display: flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    border-radius: 44px;
+    background: #191919;
+  }
+
+  @media(min-width: 769px) and (max-width: 1023px){
+    .home-top-banner.hp-seas-banner .home-top-banner-overlay {
+      left: 40px;
+      width: 390px;
+      bottom: 30px;
+    }
+
+    .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content h3{
+      font-size: 44px;
+    }
+
+    .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content p{
+      font-size: 16px;
+    }
+  }
+
+  @media(max-width: 768px){
+    .home-top-banner.hp-seas-banner .home-top-banner-overlay {
+        position: relative;
+        left: 0;
+        top: auto;
+        -ms-transform: translateY(-50%);
+        transform: none;
+        z-index: 999;
+        width: 100%;
+        bottom: 0;
+        padding: 40px 20px;
+        background: #191919;
+    }
+
+    .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content h3{
+      color: #FFF;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%; /* 32px */
+      letter-spacing: -1.6px;
+      text-transform: uppercase;
+    }
+
+    .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content p{
+      color: #FFF;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 21px */
+      margin: 4px 0px 16px 0px;
+    }
+
+    .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content p span{
+      color: #FFF;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+    }
+
+    .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content .btn-seas{
+      color: #191919;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+      display: flex;
+      padding: 8px 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      border-radius: 44px;
+      border: 1px solid #FFF;
+      background: #FFF;
+    }
+
+    .home-top-banner.hp-seas-banner .sf-hero__inner .sf-hero__content .btn-seas svg path{
+      stroke: #191919;
+    }
+  }
+</style>

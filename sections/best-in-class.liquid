@@ -1,0 +1,155 @@
+<div class="best-in-class">
+  <div class="best best-in-class-first">
+    <img class="desktop" src="{{ 'chill-in-style-desktopn.png' | asset_url }}" alt="Chill In">
+    <img class="mobile" src="{{ 'chill-in-style-mobile.png' | asset_url }}" alt="Chill In">
+  </div>
+
+  <div class="best best-in-class-second">
+    <div class="best-in-text">
+      <h1>CHILL IN STYLE</h1>
+      <p>
+        Crisp autumn hikes to outdoor gatherings and cozy nights, keep your drinks chilled and your adventures fresh.
+      </p>
+      <a href="/products/verticool-cooler"
+        >EXPLORE COOLERS
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+          <path d="M15 7.1665L18.3333 10.4998L15 13.8332" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1.66663 10.5H18.3333" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Best In Class",
+  "settings": [],
+   "presets": [{
+  "name": "Best In Class"
+}]
+}
+{% endschema %}
+{% stylesheet %}
+    .best-in-class {
+      display: grid;
+      grid-template-columns: 65% 35%;
+      gap: 0px;
+    }
+
+  .best-in-class img{
+    width: 100%;
+  }
+
+
+  .best-in-class-second {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: #191919;
+    padding: 0px 40px;
+  }
+
+  .best-in-class-second .best-in-text{
+      max-width: 410px;
+  }
+
+  .best-in-class .best-in-class-second .best-in-text h1 {
+    text-align: left;
+    color: #FFF;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    font-family: Archivo-Medium;
+    /* 72px */
+  }
+
+  .best-in-class .best-in-class-second .best-in-text p {
+    text-align: left;
+    padding: 5px 0 32px;
+    color: var(--actually-white, #FFF);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    font-family: Archivo-Medium;
+    /* 36px */
+  }
+
+  .best-in-class .best-in-class-second .best-in-text a {
+    display: inline-flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: var(--black, #191919);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 36px;
+    border-radius: 44px;
+    border: 1px solid var(--actually-white, #FFF);
+    background: var(--actually-white, #FFF);
+    text-transform: uppercase;
+    font-family: Archivo-Medium;
+  }
+
+  @media(min-width: 1024px) and (max-width:1200px){
+    .best-in-class-second .best-in-text {
+        max-width: 100%;
+    }
+
+    .best-in-class .best-in-class-second .best-in-text h1{
+      font-size: 36px;
+    }
+
+    .best-in-class .best-in-class-second .best-in-text p {
+        font-size: 14px;
+    }
+  }
+
+  @media(min-width: 769px) and (max-width:1023px){
+    .best-in-class {
+      display: block;
+    }
+
+    .best-in-class-second .best-in-text {
+        max-width: 370px;
+    }
+
+    .best-in-class .best-in-class-second {
+      padding: 48px 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .best-in-class {
+      display: block;
+    }
+
+    .best-in-class-second .best-in-text {
+        max-width: 290px;
+    }
+
+    .best-in-class .best-in-class-second {
+      padding: 48px 24px;
+    }
+
+    .best-in-class .best-in-class-second .best-in-text a {
+      font-size: 14px;
+    }
+
+    .best-in-class .best-in-class-second .best-in-text h1 {
+      font-size: 24px;
+      font-weight: 700 !important;
+    }
+
+    .best-in-class .best-in-class-second .best-in-text p {
+      font-size: 14px;
+      padding: 5px 0 16px;
+    }
+  }
+{% endstylesheet %}

@@ -1,0 +1,18 @@
+{% if shop.customer_accounts_enabled or shop.customer_accounts_optional %}
+    {% if display_by == 'icon' %}
+        <a href="{{ routes.account_url }}" class="{{ box_size | default: 'px-2 py-3.5' }}">
+            <span class="sf__tooltip-item block sf__tooltip-bottom sf__tooltip-style-2">
+                <!-- <svg class="w-[20px] h-[20px]" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"/></svg> -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 10.8333C12.3012 10.8333 14.1667 8.96785 14.1667 6.66667C14.1667 4.36548 12.3012 2.5 10 2.5C7.69885 2.5 5.83337 4.36548 5.83337 6.66667C5.83337 8.96785 7.69885 10.8333 10 10.8333Z" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16.6667 17.5002C16.6667 15.7321 15.9643 14.0364 14.7141 12.7861C13.4638 11.5359 11.7682 10.8335 10 10.8335C8.23193 10.8335 6.53624 11.5359 5.286 12.7861C4.03575 14.0364 3.33337 15.7321 3.33337 17.5002" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                  <span class="sf__tooltip-content">{{ 'layout.customer.account' | t }}</span>
+            </span>
+        </a>
+    {% else %}
+        <a href="{{ routes.account_url }}" class="{{ box_size }} px-4 py-5">
+            {{ 'layout.customer.account' | t }}
+        </a>
+    {% endif %}
+{% endif %}

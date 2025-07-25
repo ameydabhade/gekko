@@ -1,0 +1,93 @@
+<div class="home-category home-trending home-products">
+    <h2>Featured Products</h2>
+    <div class="owl-carousel owl-theme" id="homeProducts">
+      {% for product in collections.homepageSlider.products %}
+        {% if product.id == 8085551677721 %}
+        <div class="item">
+          <div class="sf__pcard prod-box prod-box-activity"> 
+            <div class="prod-images sf__pcard-image ">
+              <img class="lazyload"  class="main" src="{{ 'card-newwww.jpg' | asset_url }}">
+            </div>
+              <div class="cta-description ">
+                   <span class="sf__pcard-vendor block uppercase text-xs mb-2">geckobrands</span>
+                  <h2>GET A FREE RAMBLER®<br>14 OZ MUG</h2><p>When you spend $200 or more.</p>
+                  <a href="#" class="add-to-bag">Shop Now</a>
+                  <div class="text-disclaimer">
+                    <p>Offer expires 12/19/22. Exclusions apply.<br><a href="#" target="_self">See Details. </a></p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        {% endif %}
+        <div class="item">
+          <div class="sf__pcard prod-box {% if product.id == 8084211794201 or product.id == 8060229583129 or product.id == 8060963651865 %}lifestyle{% endif %}"> 
+            <div class="prod-images sf__pcard-image ">
+              {{ product.featured_image | img_url: '600x600' | img_tag: product.featured_image.alt }}
+            </div>
+            <div class="pdp-inner">
+              <a href="{{ product.url }}" id="{{product.selected_or_first_available_variant.id}}" class="product-detail-home">    
+              <div class="pdp-link">
+<!--                 <span class="sf__pcard-vendor block uppercase text-xs mb-2">geckobrands</span> -->
+                <h1>{{ product.title }}</h1>
+<!--                 <p>Separate exterior and interior zip pockets for small valuables.</p> -->
+              </div>
+              <div class="my_feature_container owl-carousel owl-theme ftSlider" id="ftSlider">
+                  {% if product.metafields.custom.water_proof == true %}
+                    <span class="my_feature_content item">
+                        <img src="{{ 'ECOAIR_Latex.svg' | asset_url }}">
+                        <span>Water Proof</span>
+                    </span>
+                  {% endif %}
+                  <span class="my_feature_content item">
+                      <img class="lazyload" src="{{ 'return2.png' | asset_url }}">
+                      <span>30 Days Return</span>
+                  </span> 
+                  {% if product.metafields.custom.warranty != blank %}
+                    <span class="my_feature_content item">
+                        <img class="lazyload" src="{{ 'wr-icon.png' | asset_url }}">
+                        <span>{{ product.metafields.custom.warranty }}</span>
+                    </span> 
+                  {% endif %}
+              </div>
+              </a>
+              <div class="prod-detail">
+                <p><span class="regular_price">{{ product.price | money }}</span><span class="stirke_price">{{ product.compare_at_price | money }}</span></p>
+                <a href="#!" id="{{product.selected_or_first_available_variant.id}}" class="add-to-cart add-to-cart-home">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+<!--       <div class="slider-counter"><p>1/6</p></div> -->
+      </div>
+</div>
+{% schema %}
+{
+  "name": "Home Products",
+  "settings": [],
+   "presets": [{
+  "name": "Home Products"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+  $(document).on('click','.add-to-cart-home',function(){
+      var id= this.id;
+      console.log("adding into cart");
+      $.ajax({
+          type: 'POST',
+          url: '/cart/add.js',
+          dataType: 'json',
+          data: {id:id,quantity:1},
+          success: function(response){
+              console.log("added");
+              window.MinimogEvents.emit(`ON_ITEM_ADDED`, response);
+              window.Shopify.onItemAdded(response);
+          }
+      });
+  })
+{% endjavascript %}

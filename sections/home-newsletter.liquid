@@ -1,0 +1,70 @@
+<div class="home-newsletter newsletter-24">
+   <img class="lazyload desktop" src="{{ 'newsletter-main-image.png' | asset_url }}" alt="Newsletter">  
+   <img class="lazyload mobile" src="{{ 'newsletter-main-image-mobile.jpg' | asset_url }}" alt="Newsletter">  
+   <!-- <video src="https://cdn.shopify.com/videos/c/o/v/ed0e70cfc3a34680aa6fb9f600e7ca47.mp4" playsinline="" autoplay="" muted="" loop=""></video> -->
+  <div class="home-newsletter-inner newsletter-inner-24">
+    <h3><span>Sign Up and Save 10%</span> <span>on Your First Order!</span></h3>
+    <p>& be the first to know about new arrivals, sales, and more.</p>
+    {%- assign formId = 'ContactSubscribe' | append: custom_id -%}
+            <div class="newsletter__form-input w-full">
+                {% form 'customer', id: formId %}
+                    {%- capture success_message -%}
+                        {{ 'general.newsletter_form.confirmation' | t }}
+                    {%- endcapture -%}
+                    {% render 'form__error', form: form %}
+                    {% render 'form__success', form: form, success_message: success_message %}
+                    <input type="hidden" name="contact[tags]" value="newsletter"> 
+                    {% if form_design == '1' %}
+                        <div class="flex email-top-box">
+                            {%- capture placeholder_class -%}placeholder-gray-500 placeholder-opacity-75{%- endcapture -%}
+                            <input type="email"
+                                   name="contact[email]"
+                                   id="{{ formId }}-email"
+                                   value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"
+                                   placeholder="Enter your email address"
+                                   autocorrect="off"
+                                   autocapitalize="off"
+                                   autocomplete="off"
+                                   spellcheck="false"
+                                   required
+                                   class="w-full focus:border-black block {{ placeholder_class }} bg-transparent border border-color-border border-r-0 px-4 py-2 rounded-tl rounded-bl newsletter__input-st"
+                            >
+                            <button type="submit" name="commit" class="not-move newsletter-button sf__btn sf__btn-primary">
+                                <span>{{ button_label | default: 'Subscribe' }}</span>
+                            </button>
+                        </div>
+                    {% else %}
+                        <div class="flex items-center justify-center md:flex-row flex-col email-top-box">
+                            {%- capture placeholder_class -%}placeholder-gray-500 placeholder-opacity-75{%- endcapture -%}
+                            <input type="email"
+                                   name="contact[email]"
+                                   id="{{ formId }}-email"
+                                   value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"
+                                   placeholder="Enter your email address"
+                                   autocorrect="off"
+                                   autocapitalize="off"
+                                   autocomplete="off"
+                                   spellcheck="false"
+                                   required
+                                   class="w-full block focus:border-black {{ placeholder_class }} px-0 bg-transparent border-b-2 border-black px-4 py-2 newsletter__input-st"
+                            >
+                            <button type="submit" name="commit" class="newsletter-button md:ml-2.5 md:mt-0 mt-6 ml-0 flex flex-none items-center bg-black text-white justify-center md:w-12 md:h-12 w-10 h-10 rounded-full">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M4.49966 12.0028L19.497 11.9999M19.497 11.9999L15.4593 7.96073M19.497 11.9999L15.4593 16.0391" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></path>
+                              </svg>
+                            </button>
+                        </div>
+                    {% endif %}
+                {% endform %}
+            </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Home Newsletter",
+  "settings": [],
+   "presets": [{
+  "name": "Home Newsletter"
+}]
+}
+{% endschema %}

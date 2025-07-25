@@ -1,0 +1,70 @@
+<div class="bogo-banner">
+   <img class="desktop" src="{{ 'geckobrands homepage banner v2 - desktop.jpg' | asset_url }}" alt="Bogo Banner">
+   <img class="mobile" src="{{ 'geckobrands homepage banner - mobile.jpg' | asset_url }}" alt="Bogo Banner">
+    <div class="container">
+      <div class="bogo-banner-overlay">
+        <!-- <div class="countdown-inner">  
+          <div class="offer-note">
+            <p>Offer Ends in</p>
+          </div> 
+          <div id="countdowns"></div>
+        </div>  -->
+        <h1>STOCK UP FOR THE SUMMER</h1>
+        <a href="/collections" class="btn-shop">SHOP NOW</a> 
+      </div>
+    </div>
+</div>
+{% schema %}
+{
+  "name": "Bogo Sale",
+  "settings": [],
+   "presets": [{
+  "name": "Bogo Sale"
+}]
+}  
+{% endschema %} 
+
+<!-- <script>  
+$(document).ready(function() { 
+    var targetDate = new Date('2024-06-23T23:59:00-04:00').getTime();  
+     
+    function startCountdown() {
+        var countdownInterval = setInterval(function() {
+            var currentDate = new Date().getTime();
+            var timeRemaining = targetDate - currentDate;
+
+            if (timeRemaining >= 0) {
+                var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                // Add leading zero if the value is less than 10
+                days = days < 10 ? '0' + days : days;
+                hours = hours < 10 ? '0' + hours : hours;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                function createDigitDivs(number) {
+                    return String(number).split('').map(digit => `<div class='digit'>${digit}</div>`).join('');
+                } 
+
+                $('#countdowns').html(
+                    "<div class='box days'>" + createDigitDivs(days) + "</div>" +
+                    "<div class='space'>:</div>" +
+                    "<div class='box hours'>" + createDigitDivs(hours) + "</div>" +
+                    "<div class='space'>:</div>" +
+                    "<div class='box minutes'>" + createDigitDivs(minutes) + "</div>" +
+                    "<div class='space'>:</div>" +
+                    "<div class='box seconds'>" + createDigitDivs(seconds) + "</div>"
+                );
+            } else {
+                clearInterval(countdownInterval);  
+                $('.countdown-inner').hide();
+            }
+        }, 1000); 
+    }
+
+    startCountdown();
+});
+</script> -->

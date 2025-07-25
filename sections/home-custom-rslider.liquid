@@ -1,0 +1,57 @@
+<script>
+this.variantData = '';
+</script>
+{%- liquid
+  assign bg_color = section.settings.background_color
+  assign has_bg = false
+
+  unless bg_color == "rgba(0,0,0,0)" or bg_color == blank
+  assign has_bg = true
+  endunless
+
+  assign image_ratio = section.settings.pcard_image_ratio
+  assign show_vendor = section.settings.show_vendor
+  assign pcard_alignment = section.settings.pcard_alignment
+  assign card_style = section.settings.pcard_layout
+-%}
+
+<div class="home-custom-fslider home-feature-collection count-sliders home-custom-frslider">
+  <div class="container-fluid section-my">
+    <h2>FEATURED PRODUCTS</h2>
+    <div class="ipx-slider-boxes sf__ms"> 
+      <div class="ipx-slider-boxes-inner">
+        <div class="ipx-4 ipx-slider-boxes-inner-detail">
+          {% assign collection_handle = 'home-page-realtree-slider' %} 
+          <div class="gecko-accessories">
+            <div class="gecko-accessories-slider owl-carousel owl-theme frealSlider">
+              {% for rec_product in collections[collection_handle].products  %}
+                <div>
+                  {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+                </div>
+              {% endfor %}
+            </div> 
+            <span id="slider-counter"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %} 
+  {
+    "name": "Home Custom Realtree",
+    "presets": [{
+    "name": "Home Custom Realtree"
+  }]
+  } 
+{% endschema %}
+
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}
+  

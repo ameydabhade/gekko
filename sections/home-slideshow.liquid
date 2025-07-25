@@ -1,0 +1,41 @@
+<div class="home-slideshow">
+  <div class="row">
+     <div class="col-12 col-lg-6">
+       <div class="slideshow-content">
+         <div class="overlay-image">
+           <img src="{{ 'left-gif.jpg' | asset_url }}">
+         </div>
+         <div class="overlay-text">
+           <div class="slide__block-subtitle">Last chance</div>
+           <h2>Ipsum Dummy <br> Content</h2>
+           <div class="slide__block-description">
+             <p>Lorem Ipsum Dummy Content is Used Here</p>
+             <p>Lorem Ipsum Dummy Content is Used Here.</p>
+           </div>
+            <a href=" #" class="slide__block-link  content_above inline-block sf__btn sf__btn-white sf__btn-small">
+              Shop now
+            </a>
+          </div>
+       </div>
+     </div>
+    <div class="col-12 col-lg-6">
+      <img src="{{ 'right-gif.gif' | asset_url }}">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Slideshow",
+  "settings": [],
+   "presets": [{
+  "name": "Home Slideshow"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

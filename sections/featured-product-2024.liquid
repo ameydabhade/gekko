@@ -1,0 +1,274 @@
+<script>
+this.variantData = '';
+</script>
+{%- liquid
+  assign bg_color = section.settings.background_color
+  assign has_bg = false
+
+  unless bg_color == "rgba(0,0,0,0)" or bg_color == blank
+  assign has_bg = true
+  endunless
+
+  assign image_ratio = section.settings.pcard_image_ratio
+  assign show_vendor = section.settings.show_vendor
+  assign pcard_alignment = section.settings.pcard_alignment
+  assign card_style = section.settings.pcard_layout
+-%}
+<div class="featured-24 home-custom-fslider slideroption-new">
+  <div class="featured-24-inner">
+    <div class="featured-tab-menu-top">
+      <div class="featured-tab-menu">
+          <ul>
+            <li><a href="#" data-rel="trending" class="active nav-link">Best Sellers</a></li>
+            <li><a href="#" class="nav-link" data-rel="new-arrival">New Arrivals</a></li>
+          </ul>
+          <div class="line"></div>
+      </div>
+    </div>
+ 
+    <div class="featured-tab-main"> 
+      <div class="featured-tab-main-inner trending-tabs" id="trending" style="display:block;"> 
+          <div class="featured-24-slider-box"> 
+            {% assign collection_handle = 'trending' %}   
+              <div class="featured-24-slider-box">
+                <div class="owl-carousel owl-theme newTrending">
+                  {% for rec_product in collections[collection_handle].products  %}
+                    <div>
+                      {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+                    </div>
+                  {% endfor %}
+                </div> 
+                <span id="slider-counter-trending"></span>
+              </div>
+          </div>
+      </div>
+      <div class="featured-tab-main-inner arrival-tabs" id="new-arrival">  
+        <div class="featured-24-slider-box"> 
+            {% assign collection_handle = 'new-arrivals' %}   
+            <div class="featured-24-slider-box">
+              <div class="owl-carousel owl-theme newArrival">
+                {% for rec_product in collections[collection_handle].products  %}
+                  <div>
+                    {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+                  </div>
+                {% endfor %}
+              </div> 
+              <span id="slider-counter-arrival"></span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Featured 2024",
+  "settings": [],
+   "presets": [{
+  "name": "Featured 2024"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %} 
+
+    $('.featured-tab-menu li a').on('click', function(){   
+		var target = $(this).attr('data-rel');
+	    $('.featured-tab-menu li a').removeClass('active');
+		$(this).addClass('active');
+		$("#"+target).fadeIn('slow').siblings(".featured-tab-main-inner").hide();
+		return false;
+  });
+
+  function onTabClick(evt) {
+      const tab = evt.target;
+      setLineStyle(tab);
+    }
+
+    function setLineStyle(tab) {
+      const line = document.querySelector('.featured-24 .line'); 
+      line.style.left = tab.offsetLeft + 'px';
+      line.style.width = tab.offsetWidth + 'px';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabs = document.querySelectorAll('.featured-24 .nav-link');
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', onTabClick);
+      });
+
+      setLineStyle(tabs[0]);
+    });
+  
+  $('.newArrival').owlCarousel({     
+          nav: true, 
+          mouseDrag: false,
+          navText: ["<img src='https://cdn.shopify.com/s/files/1/0683/7741/1865/files/west-arrow.png'>","<img src='https://cdn.shopify.com/s/files/1/0683/7741/1865/files/east-arrow.png'>"], 
+          margin: 16, 
+          dots: true,  
+          stagePadding: 70,   
+          items: 5,        
+          loop: false,  
+          autoplay: false, 
+          dotsEach: true,  
+          responsiveClass: true, 
+          onInitialized:arrivalCounter,
+          onTranslated:arrivalCounter,
+          responsive: {  
+              0: { 
+                  items: 1, 
+                  margin: 15, 
+                  autoplay: false, 
+                  stagePadding: 30      
+              },  
+              570: { 
+                  items: 2,
+                  margin: 15, 
+                  autoplay: false, 
+                  stagePadding: 30     
+              },
+              768: {  
+                  items: 2,
+                  margin: 20, 
+                  stagePadding: 40      
+              },
+              1023: {  
+                  items: 3
+              },
+              1130: {  
+                  items: 4
+              },
+              1500: {  
+                  items: 5
+              },
+	          onInitialized : function(){ 
+	              if($('.owl-item').first().hasClass('active'))
+	                  $('.owl-prev').hide();
+	              else
+	                  $('.owl-prev').show();
+	          }
+          }
+        });
+         
+        function arrivalCounter(event) {  
+            var element = event.target;
+            var items = event.item.count; 
+            var item = event.item.index + 1; 
+            if(window.outerWidth > 1500) {  
+              $('.arrival-tabs #slider-counter-arrival').html(""+item+" / 9");     
+            }
+            else if (window.outerWidth < 570) {  
+              $('.arrival-tabs #slider-counter-arrival').html(""+item+" / "+items);       
+            }  
+ 
+            else if (window.outerWidth > 571 && window.outerWidth < 1022) {       
+              $('.arrival-tabs #slider-counter-arrival').html(""+item+" / 12");              
+            }  
+
+            else if (window.outerWidth > 1023 && window.outerWidth < 1129) {       
+              $('.arrival-tabs #slider-counter-arrival').html(""+item+" /11");          
+            } 
+
+            else if (window.outerWidth > 1130 && window.outerWidth < 1500) {       
+              $('.arrival-tabs #slider-counter-arrival').html(""+item+" /10");          
+            }
+
+          }  
+
+        setTimeout(function() {   
+          jQuery(".arrival-tabs #slider-counter-arrival").detach().appendTo('.arrival-tabs .owl-nav') 
+        }, 1000); 
+  
+        setTimeout(function() {  
+          jQuery(".arrival-tabs .newArrival .owl-dots").detach().appendTo('.arrival-tabs .owl-nav') 
+        }, 1000);
+
+
+       $('.newTrending').owlCarousel({     
+          nav: true, 
+          mouseDrag: false,
+          navText: ["<img src='https://cdn.shopify.com/s/files/1/0683/7741/1865/files/west-arrow.png'>","<img src='https://cdn.shopify.com/s/files/1/0683/7741/1865/files/east-arrow.png'>"], 
+          margin: 16, 
+          dots: true,  
+          stagePadding: 70,   
+          items: 5,        
+          loop: false,   
+          autoplay: false, 
+          dotsEach: true,
+          responsiveClass: true,
+          onInitialized:trendingCounter,
+          onTranslated:trendingCounter,
+          responsive: {  
+              0: { 
+                  items: 1, 
+                  margin: 15, 
+                  autoplay: false, 
+                  stagePadding: 30      
+              },  
+              570: { 
+                  items: 2,
+                  margin: 15, 
+                  autoplay: false, 
+                  stagePadding: 30     
+              },
+              768: {  
+                  items: 2,
+                  margin: 20, 
+                  stagePadding: 40 
+              },
+              1023: {  
+                  items: 3
+              },
+              1130: {  
+                  items: 4
+              },
+              1500: {  
+                  items: 5
+              },
+	          onInitialized : function(){ 
+	              if($('.owl-item').first().hasClass('active'))
+	                  $('.owl-prev').hide();
+	              else
+	                  $('.owl-prev').show();
+	          }
+          }
+        });
+         
+        function trendingCounter(event) {  
+            var element = event.target;
+            var items = event.item.count; 
+            var item = event.item.index + 1; 
+             if(window.outerWidth > 1500) {  
+              $('.trending-tabs #slider-counter-trending').html(""+item+" / 5");    
+            }
+            else if (window.outerWidth < 570) { 
+              $('.trending-tabs #slider-counter-trending').html(""+item+" / "+items);     
+            } 
+ 
+            else if (window.outerWidth > 571 && window.outerWidth < 1022) {         
+              $('.trending-tabs #slider-counter-trending').html(""+item+" / 8");            
+            }  
+
+            else if (window.outerWidth > 1023 && window.outerWidth < 1129) {        
+              $('.trending-tabs #slider-counter-trending').html(""+item+" / 7");          
+            }
+
+            else if (window.outerWidth > 1130 && window.outerWidth < 1500) {       
+              $('.trending-tabs #slider-counter-trending').html(""+item+" /6");           
+            }
+          }  
+
+        setTimeout(function() {   
+          jQuery(".trending-tabs #slider-counter-trending").detach().appendTo('.trending-tabs .owl-nav') 
+        }, 1000); 
+  
+        setTimeout(function() {  
+          jQuery(".trending-tabs .newTrending .owl-dots").detach().appendTo('.trending-tabs .owl-nav') 
+        }, 1000);
+      
+{% endjavascript %}

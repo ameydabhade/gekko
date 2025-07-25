@@ -1,0 +1,57 @@
+{% if product.metafields.custom.dimension %}
+  <div class="product-dimension">
+    			<div class="row">
+    				<div class="col-12 col-lg-8 specs_detail">
+                      <div class="product-dimension-inner">
+                          {{ product.metafields.custom.dimension }}
+                      </div>
+    				</div>
+    				<div class="col-12 col-lg-4 specs__image">
+                      <div class="specs__image__wrapper">
+                       {{ product.featured_image.src | image_url: width: '900x900' | image_tag }}
+                      </div>
+    				</div>
+    			</div> 
+            
+<!--           <div class="home-footer home-footer-info warrning">
+            <div class="home-footer-left">
+        		<h2>Care Instructions <i class="fa fa-angle-right" aria-hidden="true"></i></h2>
+        	</div>
+          <div class="home-footer-right">
+            <div class="owl-carousel owl-theme" id="warringSlider">
+              <div class="item">
+                 <img src="{{ '30 day money back guranatee.png' | asset_url }}">
+                  <h1>Hand wash warm</h1>
+              </div>
+               <div class="item">
+                 <img src="{{ 'free shipping over .png' | asset_url }}">
+                  <h1>Do not bleach</h1>
+              </div>
+               <div class="item">
+                 <img src="{{ 'high quality material.png' | asset_url }}">
+                  <h1>Do not iron</h1>
+              </div>
+               <div class="item">
+                 <img src="{{ 'long lasting performance.png' | asset_url }}">
+                <h1>Drip dry</h1>
+              </div>
+            </div>
+          </div>
+    	</div> -->
+	</div>
+{% endif %}
+{% schema %}
+{
+  "name": "Product Dimensions",
+  "settings": [],
+   "presets": [{
+  "name": "Product Dimensions"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

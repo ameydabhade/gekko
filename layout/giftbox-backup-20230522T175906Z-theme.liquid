@@ -1,0 +1,132 @@
+{%- capture body_classes -%}
+template-{{ template.name | handle }} {{ template.name }}-{{ template.suffix }} {{ template.name | append: '-' | append: handle }} {% if cart.item_count == 0 %}cart-empty{% endif %}
+{%- endcapture -%}
+
+{% liquid
+  assign enable_rtl = settings.enable_rtl
+  assign language_support_rtl = settings.language_support_rtl
+  if enable_rtl and language_support_rtl != blank
+    assign shop_locale = localization.language.iso_code
+    assign language_support_rtl_list = language_support_rtl | split: ','
+    assign is_rtl = language_support_rtl_list | where: shop_locale
+    if is_rtl.size > 0
+      assign enable_rtl = true
+    else
+      assign enable_rtl = false
+    endif
+  endif
+%}
+<!doctype html>
+<html
+  class="no-js supports-no-cookies"
+  lang="{{ request.locale.iso_code }}"
+  data-template="{{ template.name }}"
+  {% if enable_rtl %}dir="rtl"{% endif %}
+>
+<head>
+  <!-- Hotjar Tracking Code for Gecko Brands -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3422404,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+	<meta name="theme-color" content="{{ settings.color_primary }}">
+    <meta name="google-site-verification" content="CZuHnrciDx5WXF9xPaj84B0WOnJdRbv3iATXhwz3d_s" />
+  {%- liquid
+    render 'preload'
+    render 'SEO'
+    render 'social-meta-tags'
+    render 'font-face'
+  -%}
+
+  {% render 'critical-css' %}
+  {% render 'critical-scripts' %}
+  {% render 'custom-code-head' %}
+
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {{ 'chunk.css' | asset_url | stylesheet_tag }}
+  {{ 'owl.theme.default.min.css' | asset_url | stylesheet_tag }}
+  {{ 'owl.carousel.min.css' | asset_url | stylesheet_tag }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+  {% render 'style-tags' %}
+
+  <script src="{{ 'theme-global.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'lazy-image.min.js' | asset_url }}" defer="defer"></script>
+  {{ 'jquery.min.js' | asset_url | script_tag }} 
+  {{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+  <!-- starapps_scripts_start -->
+<!-- This code is automatically managed by StarApps Studio -->
+<!-- Please contact support@starapps.studio for any help --><!-- starapps_scripts_end -->
+{{ content_for_header }}
+  {% render 'judgeme_core' %}
+
+
+</head>
+
+
+<body
+  id="sf-theme"
+  class="{{ body_classes }} relative min-h-screen{% if customer %} customer-logged-in{% endif %}"
+  {% if template.name == 'product' %}data-product-id="{{ product.id }}"{% endif %}
+>
+  {% render 'theme-data' %}
+  {% section 'annoucement' %}
+  {% section 'header' %}
+  {% render 'scroll-top-button' %}
+
+  <main role="main" id="MainContent">
+    {{ content_for_layout }}
+    <div id="cart-drawer-container"></div>
+  </main>
+
+  {%- liquid
+    section 'footer'
+  -%}
+
+  {% section 'mobile-sticky-bar' %}
+
+  {% render 'custom-code-body' %}
+  {% render 'foxkit-messenger' %}
+  {% render 'script-tags' %}
+
+  <script src="{{ 'app.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'foxkit-app.min.js' | asset_url }}" defer="defer"></script>
+
+  <script src="{{ 'quick-view.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-card-swatch.min.js' | asset_url }}" defer="defer"></script>
+
+<!--Gorgias Chat Widget Start-->
+<script id="gorgias-chat-widget-install-v3" 
+    src="https://config.gorgias.chat/bundle-loader/01GYCCX2MK19CWKEASBQ5T107T?source=shopify1click">
+</script>
+<script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});
+</script>
+<!--Gorgias Chat Widget End-->
+</body>
+  
+  <script>
+    window.onload = () => {
+  document.getElementsByClassName('jdgm-preview-badge')[0].onclick = fun;
+};
+function fun() {
+document.getElementsByClassName('jdgm-revs-tab-btn')[0].click();
+}
+  </script>
+  <style>
+  .jdgm-histogram-wrapper{display : none !important;}
+    .jdgm-rev__icon{display : none !important;}
+    .jdgm-prev-badge__text{cursor: pointer !important;}
+    .jdgm-histogram{display : none !important;}
+  </style>
+</html>

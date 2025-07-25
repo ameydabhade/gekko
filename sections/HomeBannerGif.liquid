@@ -1,0 +1,171 @@
+<div class="home-top-banner home-top-banner-gif hp-banner-sep">
+  <a href="/collections/all">
+    <div class="home-top-banner-inner-gif ">
+      <div class="home-top-banner-overlay-gif ">
+        <p><span>Black Friday Sale:</span></p>
+        <h4>
+          BOGO 50% Off<br>
+          <!-- <sup></sup> -->
+        </h4>
+
+        <button class="btn-gear" href="/collections/all">
+          SHOP NOW
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M15 6.6665L18.3333 9.99984L15 13.3332" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1.66675 10H18.3334" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="gif-banner-image">
+        <img class="desktop" src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/banner.gif?v=1730983891">
+        <img
+          class="mobile"
+
+          src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/banner-mobile.gif?v=1730989858"
+        >
+      </div>
+    </div>
+  </a>
+</div>
+{% schema %}
+{
+  "name": "Home Banner GIF",
+  "settings": [],
+   "presets": [{
+  "name": "Home banner GIF"
+}]
+}
+{% endschema %}
+
+<style>
+  .home-top-banner-inner-gif {
+    display: flex;
+    padding: 60px 180px;
+    justify-content: center;
+   background-color: #000;
+  }
+
+  .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 100px;
+  }
+
+  .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif p {
+    color: #FFF;
+    font-family: Archivo-Medium;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif p span {
+    color: #FFEA00;
+    font-weight:600;
+
+  }
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif h4 sup{
+    top:-12px;
+    }
+  .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif h4 {
+    color: var(--white, #F7F7F7);
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500 !important;
+    line-height: 100%;
+    letter-spacing: -0.64px;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: Archivo-Medium;
+    margin-bottom: 32px;
+  }
+
+  .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif button {
+    display: inline-flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 44px;
+    background: var(--white, #F7F7F7);
+    color: var(--black, #191919);
+    font-size: 16px;
+    font-style: normal;
+
+    line-height: normal;
+    height: 36px;
+    font-family: Archivo-Medium;
+    width: 180px;
+  }
+
+  @media(max-width:768px) {
+    .home-top-banner-inner-gif {
+      flex-direction: column;
+      padding: 0;
+
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif {
+      padding: 32px 16px;
+      order: 2;
+    }
+
+    .gif-banner-image {
+      order: 1;
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif p {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif p span {
+      font-size: 12px;
+
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif h4 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif button {
+      font-size: 16px;
+    }
+
+  }
+
+  @media (min-width: 769px) and (max-width:1260px) {
+    .home-top-banner-inner-gif {
+
+      padding: 30px 90px;
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif {
+      padding-right: 18px;
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif p {
+      font-size: 12px;
+
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif p span {
+      font-size: 12px;
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif h4 {
+      font-size: 32px;
+
+    }
+
+    .home-top-banner-gif .home-top-banner-inner-gif .home-top-banner-overlay-gif button {
+      font-size: 16px;
+    }
+  }
+</style>

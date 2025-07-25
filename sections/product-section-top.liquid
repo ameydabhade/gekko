@@ -1,0 +1,50 @@
+{% if product.metafields.custom.custom_description or product.metafields.custom.custom_description_images %}
+<div class="product-section-top">
+  <div class="row">
+    <div class="top-title mobile">
+          <h2>OVERVIEW</h2>
+      </div>
+
+    {% if product.metafields.custom.custom_description != empty %}
+    <div class="col-12 col-lg-7 feature-text-area">
+      <div class="top-title desktop">
+          <h2>OVERVIEW</h2>
+      </div>
+      <div class="custom-nav"></div>
+      <div class="overview-desc">
+        {{ product.metafields.custom.custom_description | replace: "â€™", "’" | replace: "Â", "" | replace: "â€“", "–" }}
+      </div>
+    </div>
+    {% endif %}
+    <div class="col-12 col-lg-5 feature-images-area">
+      <div class="owl-carousel owl-theme" id="productImg">
+        
+        {% if product.metafields.custom.custom_description_images != empty %}
+          {% for image in product.metafields.custom.custom_description_images.value %}
+            <div class="item">
+              {{ image.src | image_url: width: '1000' | image_tag: loading: 'lazy' }}
+            </div>
+          {% endfor %}
+        {% endif %}
+        
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+{% endif %}
+{% schema %}
+{
+  "name": "Product Section Top",
+  "settings": [],
+   "presets": [{
+  "name": "Product Section Top"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

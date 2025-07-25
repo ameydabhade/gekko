@@ -1,0 +1,758 @@
+<script>
+this.variantData = '';
+</script>
+{%- liquid
+  assign bg_color = section.settings.background_color
+  assign has_bg = false
+
+  unless bg_color == "rgba(0,0,0,0)" or bg_color == blank
+  assign has_bg = true
+  endunless
+
+  assign image_ratio = section.settings.pcard_image_ratio
+  assign show_vendor = section.settings.show_vendor
+  assign pcard_alignment = section.settings.pcard_alignment
+  assign card_style = section.settings.pcard_layout
+-%}
+
+<div class="ipx-rating-1">
+  <div class="perform-shell kayak-boards">   
+    <div class="faq-questions-list item">
+      <h2>IPX4</h2>
+        <div class="ipx-rating-inner-box"> 
+          <h3>Overview</h3>  
+          <div class="ipx-rating-subdiv"> 
+            <p>A device with an IPX4 rating can be classified as water-resistant or sweatproof. IPX4 devices can withstand 10 minutes of water splashing and spraying, mimicking heavy sweating and moderate rainy weather conditions. They offer decent protection for daily use, indoors or outdoors. This is also one of the most common IP ratings in workout headphones and earbuds for running.</p>
+          </div>
+          <div class="ipx-rating-subdiv2">
+            <div class="ipx-icon">
+              <img src="{{ 'rain.png' | asset_url }}" />
+              <p>Heavy rain: Pouring rain could be too much for a device with an IPX4 rating to handle. It protects only against light and moderate rain.</p>
+            </div>
+            <div class="ipx-icon">
+              <img src="{{ 'shower.png.png' | asset_url }}" />
+              <p>Showering: Not advisable. Sprays aren’t equal to water jets that come out of the shower head. Though the device might survive a rare water exposure.</p>
+            </div>
+            <div class="ipx-icon">
+              <img src="{{ 'swiming.png' | asset_url }}" />
+              <p>Swimming: No, a device isn’t tested for full submersion. It won’t survive going underwater.</p>
+            </div>
+          </div>
+          <h3 class="product-title">Products</h3>  
+          <div class="ipx-slider-boxes">  
+            <div class="ipx-slider-boxes-inner">
+              <div class="ipx-4 ipx-slider-boxes-inner-detail"> 
+                  {% assign collection_handle = 'ipx4' %}
+                  <div class="gecko-accessories">
+                    <div class="gecko-accessories-slider owl-carousel owl-theme ipxSliderbox">   
+                      {% for rec_product in collections[collection_handle].products  %}
+                      <div class="lg:px-5 inner-ipx-box-slider">
+                	      {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+                	    </div>
+                      {% endfor %}
+                    </div> 
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="faq-questions-list-box item">
+      <h2>IPX5</h2>
+      <div class="ipx-rating-inner-box"> 
+          <h3>Overview</h3> 
+          <div class="ipx-rating-subdiv">
+            <p>IPX5 waterproof meaning: The tested device survives 15 minutes under a jet of water (12.5 liters per minute at a pressure of 30 kilopascals, from a distance of 3 meters).</p>
+          </div>
+          <div class="ipx-rating-subdiv2">
+            <div class="ipx-icon">
+              <img src="{{ 'rain.png' | asset_url }}" />
+              <p>Heavy rain: Yes, it survives heavy rain situations with ease.</p>
+            </div>
+            <div class="ipx-icon">
+              <img src="{{ 'shower.png.png' | asset_url }}" />
+              <p>Showering: While it’s not advisable, you can shower with IPX5 earbuds. However, don’t be surprised if they stop working after a while. But you can wash them under tap water.</p>
+            </div>
+            <div class="ipx-icon">
+              <img src="{{ 'swiming.png' | asset_url }}" />
+              <p>Swimming: No, IPX5 is not a high enough rating to endure underwater submersion.</p>
+            </div>
+        </div>
+        <h3 class="product-title">Products</h3>  
+        <div class="ipx-slider-boxes"> 
+          <div class="ipx-slider-boxes-inner">
+            <div class="ipx-5 ipx-slider-boxes-inner-detail">
+              {% assign collection_handle = 'ipx5' %}
+              <div class="gecko-accessories">
+                <div class="gecko-accessories-slider owl-carousel owl-theme ipxSliderbox">   
+                  {% for rec_product in collections[collection_handle].products  %}
+                  <div class="lg:px-5 inner-ipx-box-slider">
+            	      {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+            	    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-questions-list-box item">
+      <h2>IPX6</h2>
+      <div class="ipx-rating-inner-box"> 
+        <h3>Overview</h3> 
+        <div class="ipx-rating-subdiv">
+          <p>IPX6 waterproof meaning: This is the first protection rating for headphones that survive powerful jets of water for 3 minutes straight (100 liters of water per minute at 100 kilopascals, from a distance of 3 meters).</p>
+        </div>
+        <div class="ipx-rating-subdiv2">
+          <div class="ipx-icon">
+            <img src="{{ 'rain.png' | asset_url }}" />
+            <p>Heavy rain: Yes (with ease).</p>
+          </div>
+          <div class="ipx-icon">
+            <img src="{{ 'shower.png.png' | asset_url }}" />
+            <p>Showering: Yes. It’s safe to shower with IPX6 earbuds.</p>
+          </div>
+          <div class="ipx-icon">
+            <img src="{{ 'swiming.png' | asset_url }}" />
+            <p>Swimming: No. IPX6 devices aren’t suitable for swimming. The water might still penetrate inside the headphones.</p>
+          </div>
+        </div>
+        <h3 class="product-title">Products</h3>  
+        <div class="ipx-slider-boxes"> 
+          <div class="ipx-slider-boxes-inner">
+            <div class="ipx-6 ipx-slider-boxes-inner-detail">
+                {% assign collection_handle = 'ipx6' %}
+                <div class="gecko-accessories">
+                  <div class="gecko-accessories-slider owl-carousel owl-theme ipxSliderbox">   
+                    {% for rec_product in collections[collection_handle].products  %}
+                    <div class="lg:px-5 inner-ipx-box-slider">
+              	      {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+              	    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-questions-list-box item">
+      <h2>IPX8</h2>
+      <div class="ipx-rating-inner-box"> 
+          <h3>Overview</h3> 
+          <div class="ipx-rating-subdiv">
+            <p>IPX8 devices are fully submerged in water between 1 and 3 meters (3.3-10 ft) and can resist water for an indefinite time (determined by a manufacturer).</p>
+            <p> This is an improved protection level that upgrades the time and depth the headphones can stay underwater. These are fully waterproof and are suitable for all activity in water. for all activity in water.</p>
+          </div>
+          <div class="ipx-rating-subdiv2"> 
+            <div class="ipx-icon">
+              <img src="{{ 'rain.png' | asset_url }}" />
+              <p>Heavy rain: Yes (with ease).</p>
+            </div>
+            <div class="ipx-icon">
+              <img src="{{ 'shower.png.png' | asset_url }}" />
+              <p>Showering: Yes. (with ease).</p>
+            </div>
+            <div class="ipx-icon">
+              <img src="{{ 'swiming.png' | asset_url }}" />
+              <p>Swimming: Yes. IPX8 devices are suitable for swimming. You can go deeper since they’re tested in 1-3 meter depth (3.3-10ft).</p>
+            </div>
+        </div> 
+        <h3 class="product-title">Products</h3>  
+        <div class="ipx-slider-boxes">  
+          <div class="ipx-slider-boxes-inner">
+            <div class="ipx-8 ipx-slider-boxes-inner-detail">
+                {% assign collection_handle = 'ipx-8' %} 
+                <div class="gecko-accessories">
+                  <div class="gecko-accessories-slider owl-carousel owl-theme ipxSliderbox">   
+                    {% for rec_product in collections[collection_handle].products  %}
+                    <div class="lg:px-5 inner-ipx-box-slider">
+              	      {% render 'product-card', product: rec_product, card_style: card_style, image_ratio: image_ratio, show_vendor: show_vendor, alignment: pcard_alignment %}
+              	    </div>
+                    {% endfor %}
+                  </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+ <div class="ipx-rating-table" style="display:none;">
+<table id="customers">
+  <tr>
+    <th>Product Name</th>
+    <th>Category</th>
+    <th >IPX Rating</th>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/waterproof-lightweight-30l-backpack">LIGHTWEIGHT 30L</a></td>
+    <td>WATERPROOF</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/waterproof-10l-drawstring">DRAWSTRING 10L</a></td>
+    <td>WATERPROOF</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/drawstring-waterproof-backpack-with-zip-pocket">DRAWSTRING ZIP POCKET</a></td>
+    <td>WATERPROOF</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/waterproof-lightweight-dry-bag-waist-pouch">LW WAIST PACK</a></td>
+    <td>WATERPROOF</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/lightweight-compression-dry-bag">LW COMPRESSION 2 PACK</a></td>
+    <td>WATERPROOF</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/lightweight-compression-dry-bag-1">LW COMPRESSION 3 PACK</a></td>
+    <td>WATERPROOF</td>
+    <td>4</td>
+  </tr>
+  <tr>
+     <td><a href="https://geckobrands.com/products/all-sport-32l-backpack">ALL SPORT</a></td>
+     <td>WATERPROOF</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/dueler-32l-backpack">DUELER</a></td>
+     <td>WATERPROOF</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/lightweight-waterproof-beach-blanket">LIGHTWEIGHT WATERPROOF BEACH BLANKET</a></td>
+     <td>WATERPROOF</td>
+    <td>4</td>
+  </tr>
+  <tr>
+  
+    <td><a href="https://geckobrands.com/products/optixtreme-phone-tote">OPTIXTREME PHONE TOTE</a></td>
+
+    <td>WATERPROOF</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/optixtreme-waist-pack">OPTIXTREME WAIST PACK</a></td>
+    <td>WATERPROOF</td>
+    <td>5</td>
+  </tr>
+   <tr>
+  <td><a href="https://geckobrands.com/products/optixtreme-waterproof-duffel">OPTIXTREME 60L DUFFEL</a></td>
+    <td>WATERPROOF</td>
+    <td>5</td>
+  </tr>
+ 
+   <tr>
+       <td><a href="https://geckobrands.com/products/paddler-30l-waterproof-backpack">PADDLER 30L</a></td>
+   
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+
+     <td><a href="https://geckobrands.com/products/paddler-45l">PADDLER 45L</a></td>
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+      <td><a href="https://geckobrands.com/products/waterproof-tarpaulin-dry-bag-waist-pouch">TARPAULIN WAIST PACK</a></td>
+   
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/phone-tote">PHONE TOTE</a></td>
+    
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+     <td><a href="https://geckobrands.com/products/hydroner-20l-backpack">HYDRONER</a></td>
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/durable-view-dry-bag">DURABLE VIEW</a></td>
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/clear-pvc-dry-bag">CLEAR PVC</a></td>
+   
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/tarpaulin-dry-bags">TARPAULIN DRY BAG</a></td>
+ 
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+   <tr>
+     <td><a href="https://geckobrands.com/products/waterproof-50l-pvc-duffel">50L PVC DUFFEL</a></td>
+
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+   <tr>
+     <td><a href="https://geckobrands.com/products/30l-dry-bag-cooler">30L DRY BAG COOLER</a></td>
+
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/backpack-dry-bag-cooler">BACKPACK DRY BAG COOLER</a></td>
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/tote-dry-bag-cooler">TOTE DRY BAG COOLER</a></td>
+
+    <td>WATERPROOF</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td><a href="https://geckobrands.com/products/waterproof-phone-dry-bag">LARGE PHONE DRY BAG</a></td>
+   <td>WATERPROOF</td>
+    <td>8</td>
+  </tr>
+</table>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Ipx Rating 1",
+    "presets": [{
+    "name": "Ipx Rating 1"
+  }]
+  } 
+{% endschema %}
+
+{% stylesheet %}
+  
+.ipx-rating-1 {
+    padding: 20px 0px;  
+}
+.ipx-rating-1.new { 
+    position: relative;
+    padding: 70px 0px 60px 0px;
+}
+
+.ipx-rating-1 .row {
+    display: flex;
+}
+
+.ipx-rating-1 .row .col-lg-6 {
+    position: relative;
+}
+
+.ipx-rating-1 img {
+    width: 100%;
+}
+
+.ipx-rating-1 .owl-theme .owl-dots .owl-dot.active span, 
+.ipx-rating-1 .owl-theme .owl-dots .owl-dot:hover span {
+    background: #002b45; 
+} 
+ 
+.ipx-rating-1 .perform-shell.kayak-boards h2{
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: 700!important;
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+} 
+
+.faq-questions-list-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.ipx-rating-1 .ipx-rating-1-inner {
+    max-width: 420px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0;
+    margin: auto;
+}
+
+.ipx-rating-1 .ipx-rating-1-inner h1 {
+    font-size: 42px;
+    font-weight: 500;
+    font-stretch: normal;
+
+    line-height: 1.29;
+    letter-spacing: normal;
+    color: #002d39;
+    text-transform: inherit;
+    margin: 0px;
+}
+
+.ipx-rating-1 .ipx-rating-1-inner p {
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #121212;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    max-width: 370px;
+}
+
+.ipx-rating-1 .ipx-rating-1-inner a {
+    border-radius: 4px;
+    border: solid 1px #00485a;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+
+    line-height: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 200px;
+    color: #002d39;
+    background: transparent;
+    display: block;
+}
+
+.ipx-rating-1 .perform-shell.kayak-boards h1 {
+    color: #103643;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: left;
+    width: 630px;
+    margin: 0;
+    line-height: 55px;
+}
+
+.ipx-rating-1 .perform-shell.kayak-boards h1 span {
+    color: #961201;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: left;
+    width: 630px;
+    line-height: 55px;
+    position: relative;
+}
+
+.ipx-rating-1 .perform-shell.kayak-boards a {
+    color: #000;
+    margin-top: 30px;
+    display: block;
+    margin-left: 30px;
+    position: relative;
+    font-size: 18px;
+}
+
+.ipx-rating-1 .perform-shell.kayak-boards a span {
+    position: relative;
+}
+
+.ipx-rating-1 .perform-shell.kayak-boards a span:after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 1.5px;
+    background: #cccccc;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.Hardshell-kayak {
+    margin-bottom: 40px;
+}
+
+.product-faqs {
+    margin-bottom: 40px;
+}
+
+.faq-questions-list .faq-questions-list-box:first-child{ 
+  padding-top: 0px;
+}
+
+.faq-questions-list .faq-questions-list-box {
+    padding: 10px 0px;
+    cursor: pointer;
+    margin-bottom:12px; 
+}
+
+.faq-page .faq-questions-list .faq-questions-list-box {
+    padding: 0px 0px;
+    cursor: pointer;
+}
+
+.faq-questions-list .faq-questions-list-box:last-child {
+    border-bottom: 1px solid #fff;
+}
+
+.faq-questions-list .faq-questions-list-box .title {
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    color: #fff;
+    margin: 0;
+    cursor: pointer; 
+    display: block;
+    position: relative;
+    text-align: left;
+    background: #002b45;
+    padding: 25px 30px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.ipx-rating-1 .faq-questions-list .faq-questions-list-box .panel {
+    display: none;
+    padding: 0px 15px;
+}
+
+.ipx-rating-1 .faq-questions-list .faq-questions-list-box .panel p {
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #000;
+    margin: 15px 0 0 0;
+    text-align: left;
+    text-transform: inherit;
+}
+
+.faq-questions-list .faq-questions-list-box .panel a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.product-faqs .perform-shell.kayak-boards a {
+    color: #000;
+    margin-top: 20px;
+    display: block;
+    margin-left: 20px;
+    position: relative;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.product-faqs .perform-shell.kayak-boards a span:after {
+    width: 150px;
+}
+
+.product-faqs .perform-shell.kayak-boards h1 {
+    color: #103643;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: left;
+    width: 500px;
+    margin: 0 0 10px 0;
+    line-height: 55px;
+}
+
+.faq-questions-list .faq-questions-list-box .title::after {
+    width: 20px;
+    height: 20px;
+    background: url('https://cdn.shopify.com/s/files/1/0683/7741/1865/files/MicrosoftTeams-image_56.png') no-repeat;
+    float: right;
+    display: inline-block;
+    content: ""; 
+    background-size: 100% 100% !important; 
+} 
+
+.faq-questions-list .faq-questions-list-box .title.active::after {
+    background: url('https://cdn.shopify.com/s/files/1/0683/7741/1865/t/3/assets/MicrosoftTeams-image%20(58).png') no-repeat;
+    background-size: 100% 100% !important;
+}
+
+.ipx-rating-subdiv{
+  margin-bottom: 20px; 
+} 
+
+.ipx-rating-subdiv p{
+  margin-bottom: 7px; 
+}
+
+.ipx-rating-subdiv2 {
+    display: grid; 
+    grid-gap: 15px;
+    grid-template-columns: repeat(3,1fr);
+    margin-bottom: 30px; 
+} 
+  
+.ipx-rating-subdiv2 .ipx-icon {
+    display: flex;
+    padding: 0px 5px; 
+    align-items: center;
+    background: #f1f1f1;
+    border: 0.5px #f1f1f1;
+    border-radius: 10px;
+}
+  
+.ipx-rating-subdiv2 .ipx-icon img {
+    width: 90px;
+    height: 90px;
+    padding: 10px; 
+   
+}
+  
+.ipx-rating-subdiv2 .ipx-icon p { 
+    line-height: 1.2;
+    text-align: left;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+   .ipx-rating-1  .perform-shell.kayak-boards {
+        padding: 20px 0 0 0;
+    }
+
+  .ipx-rating-1 .faq-questions-list .faq-questions-list-box .title {
+      font-size: 14px;
+      padding: 15px 30px;
+      ine-height: inherit;
+  }
+
+  .ipx-rating-1 .faq-questions-list .faq-questions-list-box {
+      margin-bottom: 0px;
+  }
+
+  #customers tr td:last-child {
+    text-align:center !important;
+}
+    #customers tr th:last-child {
+    text-align:center !important;
+}
+  .faq-questions-list .faq-questions-list-box .panel p {
+
+    font-size: 16px;
+  }
+  .ipx-rating-table #customers{
+    width:90%;
+  }
+  .ipx-rating-subdiv2 .ipx-icon img {
+    width: 80px;
+    height: 80px;
+  }
+  .ipx-rating-table{ 
+    padding: 0px 0 60px!important;
+}
+  
+    .ipx-rating-1 {
+        position: relative;
+        padding: 10px 0px;
+    }
+
+    .ipx-rating-1 .row {
+        flex-wrap: wrap;
+    }
+
+    .ipx-rating-1 .ipx-rating-1-inner {
+        max-width: 100%;
+        position: relative;
+        left: 0;
+        top: auto;
+        transform: none;
+        right: 0;
+        margin: 15px 0px 0px 0px;
+    }
+
+    .ipx-rating-1 .ipx-rating-1-inner h1 {
+        font-size: 26px;
+    }
+
+    .ipx-rating-1 .ipx-rating-1-inner p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+
+    .ipx-rating-1 .ipx-rating-1-inner a {
+        font-size: 16px;
+        line-height: 32px;
+        width: 150px;
+    }
+} 
+@media (min-width: 769px) and (max-width:1200px) {
+  .faq-questions-list .faq-questions-list-box .title{
+    padding:15px 30px;
+  } 
+  .faq-questions-list .faq-questions-list-box .panel p {
+
+    font-size: 18px;
+  }
+}
+  
+  @media (min-width: 769px) and (max-width:920px){
+    .perform-shell.kayak-boards {
+       margin-top:0px;
+      
+    }
+  }
+  
+  @media (min-width: 920px) and (max-width:1024px){
+    .ipx-rating-1 .perform-shell.kayak-boards {
+       margin-top:20px;
+      
+    }
+  }
+    @media (min-width: 1025px) and (max-width:1200px){
+    .ipx-rating-1 .perform-shell.kayak-boards {
+       margin-top:40px;
+      
+    }
+  }
+
+  @media (max-width: 1200px) { 
+    .ipx-rating-1 .perform-shell.kayak-boards {
+      display: block;
+    }
+  }
+  @media (max-width: 1024px) {
+    
+    .ipx-rating-table #customers{
+    width:90%;
+  }
+  }
+{% endstylesheet %}
+{% javascript %}
+  
+
+
+$('.faq-questions-list-box .title').click(function(j) {
+        var dropDown = $(this).closest('.faq-questions-list-box').find('.panel');
+        $(this).closest('.faq-questions-list').find('.panel').not(dropDown).slideUp();
+        if ($(this).hasClass('active')) {
+          $(this).removeClass('active');
+        } else {
+          $(this).closest('.faq-questions-list').find('.title.active').removeClass('active');
+          $(this).addClass('active');
+        }
+        dropDown.stop(false, true).slideToggle();
+        j.preventDefault();
+    });
+
+  {% endjavascript %}
+  

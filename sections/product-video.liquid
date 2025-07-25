@@ -1,0 +1,53 @@
+
+<!--    <div class="container"> -->
+{% if product.metafields.custom.product_video_url %}
+<div class="product-video">
+   
+         <div class="video-content">
+
+          
+             <video src="{{ product.metafields.custom.product_video_url.value }}#t=0.1" type="video/mp4" onmouseover="dataset.over=true;controls=true"
+                onmouseout="delete dataset.over;if(paused)controls=false;"
+                onplay="controls=true"
+                onpause="if(!dataset.over&&!dataset.focus)controls=false"
+                onfocusin="dataset.focus=true; controls=true"
+                onfocusout="delete dataset.focus;if(paused)controls=false;">
+              </video>
+           
+           {% endif %}
+            
+
+            
+         </div>
+<!--           <div class="cta-block center-center m-inherit no-transition" style="">
+            <div class="pd-banner__text">
+              <div class="d-block">
+              <h2>OUR LIGHTEST BOTTLE YET</h2><h4>Get filled in on all the features.</h4>
+              </div>
+            </div>
+            <button class="play icon" title="Watch Now" aria-label="Play Button">
+              <div class="icons">
+                <svg class="w-[20px] h-[20px]" viewBox="0 0 18 18" fill="currentColor">
+                    <path d="M15.562 8.1L3.87.225c-.818-.562-1.87 0-1.87.9v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z" fill="currentColor"></path>
+                  </svg>
+              </div>
+              <span class="video-cta-text mt-3">Watch Now</span>
+            </button>
+          </div> -->
+   </div>
+<!--    </div> -->
+{% schema %}
+{
+  "name": "Product Video",
+  "settings": [],
+   "presets": [{
+  "name": "Product Video"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

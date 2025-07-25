@@ -1,0 +1,323 @@
+<div class="home-banner-black-friday-desktop">
+  <div class="home-banner-empty"></div>
+  <div class="home-banner-content-div">
+    <div class="countdown-content">
+      <!--
+        <div class="offer-note">
+          <p>Offer Ends In</p>
+          <div id="countdowns"></div>
+        </div>
+      -->
+
+      <div class="black-friday-content">
+        <p class="bogo-offer">
+          HOLIDAY DEALS <br>
+          SALE 50% Off
+        </p>
+        <div class="bogo-desc">
+          <p class="bogo-desc1">The Deal You Can’t Miss!</p>
+          <p class="bogo-desc1">Buy 1 item and get 50% off the lower-priced item!</p>
+        </div>
+        <a href="/collections/all">Shop the sale</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Banner Black Friday",
+  "settings": [],
+   "presets": [{
+  "name": "Home Banner Black Friday"
+}]
+}
+{% endschema %}
+
+<script>
+  $(document).ready(function () {
+      var targetDate = new Date('2024-12-03T23:59:58-08:00').getTime();
+
+      function startCountdown() {
+          var countdownInterval = setInterval(function () {
+              var currentDate = new Date().getTime();
+              var timeRemaining = targetDate - currentDate;
+
+              if (timeRemaining >= 0) {
+                  // Calculate hours, minutes, and seconds
+                  var hours = Math.floor(timeRemaining / (1000 * 60 * 60)); // Total hours remaining
+                  var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                  // Add leading zero if the value is less than 10
+                  hours = hours < 10 ? '0' + hours : hours;
+                  minutes = minutes < 10 ? '0' + minutes : minutes;
+                  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                  // Update the countdown HTML
+                  $('#countdowns').html(
+                      "<span class='box'>" + hours + "</span><span class='space'>:</span>" +
+                      "<span class='box'>" + minutes + "</span><span class='space'>:</span>" +
+                      "<span class='box'>" + seconds + "</span>"
+                  );
+              } else {
+                  clearInterval(countdownInterval);
+                  $('#countdowns').html("<span>Only Few Hours Left</span>");
+              }
+          }, 1000);
+      }
+
+      startCountdown();
+  });
+</script>
+
+{% comment %}
+  <script>
+    $(document).ready(function () {
+        var targetDate = new Date('2024-11-29T23:59:00-04:00').getTime();
+
+        function startCountdown() {
+            var countdownInterval = setInterval(function () {
+                var currentDate = new Date().getTime();
+                var timeRemaining = targetDate - currentDate;
+
+                if (timeRemaining >= 0) {
+                    // Calculate days, hours, minutes, and seconds
+                    var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                    // Add leading zero if the value is less than 10
+                    days = days < 10 ? '0' + days : days;
+                    hours = hours < 10 ? '0' + hours : hours;
+                    minutes = minutes < 10 ? '0' + minutes : minutes;
+                    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                    // Update the countdown HTML
+                    $('#countdowns').html(
+                        "<span class='box'>" + days + "</span><span class='space'>:</span>" +
+                        "<span class='box'>" + hours + "</span><span class='space'>:</span>" +
+                        "<span class='box'>" + minutes + "</span><span class='space'>:</span>" +
+                        "<span class='box'>" + seconds + "</span>"
+                    );
+                } else {
+                    clearInterval(countdownInterval);
+                    $('#countdowns').html("<span>Countdown has ended!</span>");
+                }
+            }, 1000);
+        }
+
+        startCountdown();
+    });
+  </script>
+{% endcomment %}
+
+<style>
+  .home-banner-black-friday-desktop {
+    background-image: url('https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko-home-banner-2.jpg?v=1732645136');
+    background-size: cover;
+
+    display: flex;
+    justify-content: space-around;
+    height: 700px;
+  }
+
+  .home-banner-black-friday-desktop .home-banner-content-div .countdown-content .offer-note p {
+    color: #003E50;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .home-banner-black-friday-desktop .home-banner-content-div .countdown-content .offer-note {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .home-banner-black-friday-desktop .home-banner-content-div .countdown-content #countdowns .box {
+    background: #fff;
+    border-radius: 4px;
+    color: #003E50;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 36px;
+    height: 45px;
+    padding: 3px 7px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-family: 'SF-Body-font';
+  }
+
+  .black-friday-content .bogo-offer {
+    color: #003E50;
+    font-size: 64px;
+
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 64px */
+    text-transform: uppercase;
+  }
+
+  .black-friday-content .bogo-desc1 {
+    color: #003E50;
+
+
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 36px */
+  }
+
+  .black-friday-content a {
+
+    padding: 16px 32px;
+    width: fit-content;
+    gap: 8px;
+    color: #FFF;
+    text-align: center;
+
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 36px */
+    text-transform: uppercase;
+    background: #003E50;
+  }
+
+  .home-banner-content-div {
+    margin: auto 0;
+  }
+
+  .black-friday-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+  }
+
+  .home-banner-black-friday-desktop .home-banner-content-div .countdown-content #countdowns .space {
+    color: #003E50;
+    text-align: center;
+    margin: 0 8px;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  @media screen and (min-width: 769px) {
+    .countdown-content {
+      position: relative;
+      left: 100px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .home-banner-black-friday-desktop {
+      background-image: url('https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko-mobile.png?v=1732641606');
+      height: 769px;
+      justify-content: start;
+      position: relative;
+
+    }
+
+    .home-banner-content-div {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+    }
+
+    .home-banner-black-friday-desktop .home-banner-content-div .countdown-content .offer-note p {
+
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    .black-friday-content .bogo-offer {
+
+
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      /* 64px */
+      text-transform: uppercase;
+    }
+
+    .black-friday-content .bogo-desc1 {
+
+      font-size: 18px;
+
+    }
+
+    .black-friday-content a {
+
+      font-size: 20px;
+
+    }
+
+    .countdown-content {
+      padding: 32px;
+    }
+  }
+
+
+  @media screen and (min-width: 850px) and (max-width: 1300px) {
+    .black-friday-content .bogo-offer {
+
+      font-size: 42px;
+
+    }
+
+    .black-friday-content .bogo-desc1 {
+      font-size: 16px;
+    }
+
+    .black-friday-content a {
+      font-size: 16px;
+    }
+
+    .home-banner-black-friday-desktop {
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+
+    .home-banner-content-div {
+      margin: 60px 0;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 850px) {
+    .home-banner-black-friday-desktop {
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+
+    .black-friday-content .bogo-offer {
+
+      font-size: 32px;
+
+    }
+
+    .home-banner-content-div {
+      padding: 32px 0;
+    }
+  }
+</style>

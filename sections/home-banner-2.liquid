@@ -1,0 +1,109 @@
+<div class="home-top-banner hp-banner-sep">
+  <a href="/collections/classic">
+    <div class="home-top-banner-inner sf-hero__inner">
+      <!-- Slider container -->
+      <div class="banner-slider banner-slider-desktop owl-carousel">
+        <img class="banner-slider-img desktop" src="{{ 'GeckoBanner1.png' | asset_url }}" alt="Fall Ready Gear">
+        <img
+          class="banner-slider-img desktop"
+          src="{{ 'GeckoBanner2.png' | asset_url }}"
+          alt="Winter Ready Gear"
+        >
+      </div>
+      
+      <!-- Mobile images (optional) -->
+      <div class="banner-slider banner-slider-mobile owl-carousel ">
+        <img
+          class="banner-slider-img mobile"
+          src="{{ 'mobile-1.png' | asset_url }}"
+          alt="Fall Ready Gear Mobile"
+        >
+        <img
+          class="banner-slider-img mobile"
+          src="{{ 'mobile-2.png' | asset_url }}"
+          alt="Winter Ready Gear Mobile"
+        >
+      </div>
+
+      <div class="home-top-banner-overlay sf-hero__content">
+        <h3>FALL-READY GEAR</h3>
+        <p>
+          Exploring, relaxing, or gathering: We have the gear to match your pace. Find what you need to make it yours.
+        </p>
+        <button class="btn-gear" href="/collections/classic">
+          GEAR UP
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M15 6.6665L18.3333 9.99984L15 13.3332" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1.66675 10H18.3334" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </a>
+</div>
+{% schema %}
+{
+  "name": "Home Banner 2",
+  "settings": [],
+   "presets": [{
+  "name": "Home banner 2"
+}]
+}
+{% endschema %}
+
+<style>
+  .banner-slider img{
+     background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  }
+  @media (max-width: 768px) {
+    .banner-slider-desktop{
+      display:none !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .banner-slider-mobile{
+      display:none !important;
+    }
+  }
+</style>
+<script>
+    $('.banner-slider-desktop').owlCarousel({
+      loop:true,
+      margin:0,
+      dots:false,
+      nav:false,
+      autoplay:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:3
+          },
+          1000:{
+              items:1
+          }
+      }
+  })
+
+
+  $('.banner-slider-mobile').owlCarousel({
+      loop:true,
+      margin:0,
+      nav:false,
+      dots:false,
+      autoplay:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:1
+          },
+          1000:{
+              items:1
+          }
+      }
+  })
+</script>

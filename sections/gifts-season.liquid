@@ -1,0 +1,335 @@
+<div>
+  <div class="eco-product-showcase">
+    <div class="title">
+      <h1>top gifts of the season</h1>
+      <p>Celebrate the holidays with 10% off - use <span style="font-weight:600">NY10</span> at checkout!</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card card1">
+        <a href="/products/waterproof-lightweight-30l-backpack">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko1.png?v=1734450193"
+            alt="Eco-friendly Water Bottle"
+          >
+          <p class="available-quantity">Available in <span>27+</span> Colors</p>
+          <h3>WATERPROOF LIGHTWEIGHT 30L BACKPACK</h3>
+        </a>
+      </div>
+
+      <div class="product-card card2">
+        <a class="card2" href="/products/waterproof-dry-box">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko2.png?v=1734450198"
+            alt="Organic Cotton T-Shirt"
+          >
+          <p class="available-quantity">Available in <span>2+</span> Colors</p>
+          <h3>DRY BOX</h3>
+        </a>
+      </div>
+
+      <div class="product-card">
+        <a href="/products/large-utility-tote">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko3.png?v=1734450204"
+            alt="Recycled Leather Wallet"
+          >
+          <p class="available-quantity">Available in <span>44+</span> Colors</p>
+
+          <h3>LARGE UTILITY TOTE</h3>
+        </a>
+      </div>
+
+      <div class="product-card card3">
+        <a class="card3" href="/products/8-pocket-tote">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko4.png?v=1734450210"
+            alt="Bamboo Sunglasses"
+          >
+          <p class="available-quantity">Available in <span>29+</span> Colors</p>
+          <h3>8 POCKET TOTE</h3>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-gift-season mobile-gift owl-carousel owl-theme">
+      <div class="item">
+        <a href="/products/waterproof-lightweight-30l-backpack">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko1.png?v=1734450193"
+            alt="Eco-friendly Water Bottle"
+          >
+          <p class="available-quantity">Available in <span>27+</span> Colors</p>
+          <h3>WATERPROOF LIGHTWEIGHT 30L BACKPACK</h3>
+        </a>
+      </div>
+      <div class="item">
+        <a href="/products/waterproof-dry-box">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko2.png?v=1734450198"
+            alt="Organic Cotton T-Shirt"
+          >
+          <p class="available-quantity">Available in <span>2+</span> Colors</p>
+          <h3>DRY BOX</h3>
+        </a>
+      </div>
+      <div class="item">
+        <a href="/products/large-utility-tote">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko3.png?v=1734450204"
+            alt="Recycled Leather Wallet"
+          >
+          <p class="available-quantity">Available in <span>44+</span> Colors</p>
+          <h3>LARGE UTILITY TOTE</h3>
+        </a>
+      </div>
+      <div class="item">
+        <a href="/products/8-pocket-tote">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0683/7741/1865/files/gecko4.png?v=1734450210"
+            alt="Bamboo Sunglasses"
+          >
+          <p class="available-quantity">Available in <span>29+</span> Colors</p>
+          <h3>8 POCKET TOTE</h3>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Gifts Season",
+  "settings": [],
+   "presets": [{
+  "name": "Gifts Season"
+}]
+}
+{% endschema %}
+
+<style>
+   .available-quantity{
+    color: #000 !important;
+   text-align: center;
+  font-size: 12px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 150%; /* 18px */
+   }
+   .available-quantity span{
+   color: #D8152F;
+   font-size: 12px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 150%;
+   }
+        .eco-product-showcase {
+            width: 100%;
+            height: 100%;
+             padding: 120px 120px 40px 120px;
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .eco-product-showcase .title {
+            position: absolute;
+            top: 60px;
+            left: 40px;
+
+
+
+        }
+        .eco-product-showcase .title h1 {
+            color: #D8152F;
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%; /* 60px */
+            text-transform: uppercase;
+        }
+        .eco-product-showcase .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+             padding: 20px;
+            border-radius: 10px;
+        }
+        .eco-product-showcase .product-card {
+
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+        .eco-product-showcase .product-card img {
+            width: 100%;
+
+            height: auto;
+            margin:0 auto;
+        }
+        .eco-product-showcase .product-card h3 {
+            color: #000;
+            text-align: center;
+            -webkit-text-stroke-width: 1;
+            -webkit-text-stroke-color: #000;
+             font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 150%; /* 30px */
+            border-radius: 10px;
+            border: 1px solid #000;
+            background: rgba(0, 0, 0, 0.00);
+            padding: 4px 8px;
+            width:fit-content;
+            margin:0 auto;
+        }
+        .eco-product-showcase .product-card p {
+            margin: 0 0 10px 0;
+            color: #666;
+        }
+        .eco-product-showcase .product-card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .eco-product-showcase .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .eco-product-showcase {
+             background-image: url('https://cdn.shopify.com/s/files/1/0683/7741/1865/files/christmastwigsdesktop.png?v=1734449886');
+            }
+            .mobile-gift-season{
+            display:none !important;
+
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-gift-season{
+             position:relative;
+             top:70px;
+            }
+            .mobile-gift-season h3{
+
+             color: #000;
+            text-align: center;
+            -webkit-text-stroke-width: 1;
+            -webkit-text-stroke-color: #000;
+             font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 150%; /* 30px */
+            border-radius: 10px;
+            border: 1px solid #000;
+            background: rgba(0, 0, 0, 0.00);
+            padding: 4px 8px;
+            width:fit-content;
+            margin:0 auto;
+            }
+
+
+            .eco-product-showcase {
+             background-image: url('https://cdn.shopify.com/s/files/1/0683/7741/1865/files/christmaswigsmobile.png?v=1734449999');
+             padding: 30px 30px 80px 30px;
+         }
+
+            .eco-product-showcase .title {
+              position: absolute;
+              top: 20px;
+              left: 20px;
+              width:285px !important;
+            }
+       .eco-product-showcase .title h1{
+        font-size:32px;
+        }
+
+        .eco-product-showcase .product-grid {
+
+        display:none;
+        }
+
+        .mobile-gift-season .owl-dots .owl-dot span {
+         background:#D8152F !important;
+
+        }
+     .mobile-gift-season  .owl-dots .owl-dot.active span{
+     background:#000 !important;
+     }
+
+
+         .available-quantity{
+         margin-bottom:10px;
+         }
+
+        }
+
+
+        @media (min-width: 768px) and (max-width: 1240px) {
+        .eco-product-showcase .product-card h3 {
+        font-size:14px;
+        }
+        .eco-product-showcase .title h1{
+        font-size:48px;
+        }
+        .eco-product-showcase .product-grid {
+        gap:20px;
+        grid-template-columns: repeat(2, 1fr);
+
+        }
+        }
+
+        @media (min-width: 375px) and (max-width: 450px) {
+        .eco-product-showcase .title {
+              position: absolute;
+              top: 15px;
+              left: 15px;
+            }
+       .eco-product-showcase .title h1{
+        font-size:28px;
+        }
+        }
+        @media (min-width: 1240px) and (max-width: 1440px) {
+        .eco-product-showcase .product-card h3 {
+        font-size:12px;
+        }
+        .eco-product-showcase .title h1{
+        font-size:42px;
+        }
+        .eco-product-showcase .product-grid {
+        gap:20px;
+
+
+        }
+</style>
+
+<script>
+  $(document).ready(function() {
+      $('.mobile-gift').owlCarousel({
+          items: 1,
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: true,
+          responsive: {
+              0: {
+                  items: 1
+              },
+              768: {
+                  items: 1
+              }
+          }
+      });
+  });
+</script>

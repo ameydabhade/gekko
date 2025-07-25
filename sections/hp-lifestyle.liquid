@@ -1,0 +1,213 @@
+<div class="hp-lifestyle">
+  <div class="hp-lifestyle-inner">
+    <div class="hp-lifestyle-inner-content">
+      <img class="desktop" src="{{ 'hp-lifetyle-left.png' | asset_url }}">
+      <img class="mobile" src="{{ 'hp-lifetyle-left-mobile.png' | asset_url }}">
+      <div class="hp-lifestyle-inner-content-left">
+        <h1>MIX-AND-MATCH,<br>  OR JUST GET THE WHOLE SET!</h1>
+        <a class="btn-seas" href="/collections">
+          shop collections
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M15 6.66663L18.3333 9.99996L15 13.3333" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1.66675 10H18.3334" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+      <div class="hp-lifestyle-inner-content">
+        <img class="desktop" src="{{ 'hp-lifetyle-right-25.jpg' | asset_url }}">
+        <img class="mobile" src="{{ 'hp-lifetyle-right-mobile.png' | asset_url }}">
+        <div class="hp-lifestyle-inner-content-right">
+          <h1>A MUST-HAVE FOR SUMMER <br>ADVENTURES</h1>
+          <p>And Now Available in New Colors!</p>
+          <a class="btn-seas" href="/products/waterproof-dry-box">
+            shop dry boxes
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M15 6.66663L18.3333 9.99996L15 13.3333" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1.66675 10H18.3334" stroke="#191919" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Home Lifestyle",
+  "settings": [],
+   "presets": [{
+  "name": "Home Lifestyle"
+}]
+}
+{% endschema %}
+
+<style>
+  .hp-lifestyle{
+    
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner{
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content{
+    position: relative;
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-left{
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    z-index: 10;
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-right{
+    position: absolute;
+    bottom: 70px;
+    right: 70px;
+    z-index: 10;
+    text-align: right;
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner img{
+    width: 100%;
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner img.mobile{
+    display: none;
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content h1{
+    color: var(--actually-white, #FFF);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 48px */
+    letter-spacing: -0.96px;
+    margin: 0px;
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content p{
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+    text-transform: capitalize;
+    margin: 4px 0px 0px 0px;
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-right a{
+    float: right;
+  }
+
+  .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content a{
+    display: flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 44px;
+    background: var(--actually-white, #FFF);
+    color: var(--black, #191919);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: 32px;
+    width: fit-content;
+  }
+
+  @media(min-width: 769px) and (max-width: 1023px){
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-left{
+      top: 40px;
+      left: 40px;
+    }
+  
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-right{
+      bottom: 40px;
+      right: 40px;
+    }
+
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-left,
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-right{
+      padding: 40px 40px !important;
+    }
+  }
+
+  @media(max-width: 990px){
+    .hp-lifestyle .hp-lifestyle-inner img.desktop{
+      display: none;
+    }
+
+    .hp-lifestyle .hp-lifestyle-inner img.mobile{
+      display: block;
+    }
+
+    .hp-lifestyle .hp-lifestyle-inner{
+      grid-gap: 0px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-left,
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-right{
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 40px 20px;
+      align-self: stretch;
+      background: #000;
+      text-align: left;
+    }
+
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content h1{
+      color: #FFF;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%; /* 20px */
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content .hp-lifestyle-inner-content-right a {
+      float: none;
+    }
+
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content a{
+      display: flex;
+      padding: 8px 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      border-radius: 44px;
+      border: 1px solid #FFF;
+      background: #FFF;
+      color: #000;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+      margin-top: 16px;
+      max-width: 100%;
+    }
+
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content br{
+      display: block;
+    }
+
+    .hp-lifestyle .hp-lifestyle-inner .hp-lifestyle-inner-content p{
+      color: #FFF;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%; /* 21px */
+      margin: 16px 0px 0px 0px;
+    }
+  }
+
+</style>

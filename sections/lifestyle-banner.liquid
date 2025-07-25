@@ -1,0 +1,130 @@
+<div class="lifestyle-banner">
+  <a href="/collections/automotive-accessories">
+    <div class="lifestyle-banner-inner">
+      <img class="desktop" src="{{ 'hp-lifestyle-banner25.png' | asset_url }}">
+      <img class="mobile" src="{{ 'hp-lifestyle-banner25mobile.png' | asset_url }}">
+      <div class="lifestyle-banner-overlay">
+        <h1>STAY ORGANIZED & READY TO GO <br>FOR BEACH DAYS AHEAD!</h1>
+        <button class="btn-seas" href="/collections/automotive-accessories">
+          shop automotive
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M15 6.66675L18.3333 10.0001L15 13.3334" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1.66675 10H18.3334" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </a>
+</div>
+{% schema %}
+{
+  "name": "Home Lifestyle Banner",
+  "settings": [],
+   "presets": [{
+  "name": "Home Lifestyle Banner"
+}]
+}
+{% endschema %}
+
+<style>
+  .lifestyle-banner{
+    
+  }
+
+  .lifestyle-banner .lifestyle-banner-inner{
+    position: relative;
+  }
+
+  .lifestyle-banner .lifestyle-banner-inner img{
+    width: 100%;
+  }
+
+  .lifestyle-banner .lifestyle-banner-inner .lifestyle-banner-overlay{
+    position: absolute;
+    right: 0;
+    bottom: 70px;
+    z-index: 10;
+    text-align: right;
+    width: 100%;
+    padding-right: 70px;
+  }
+
+  .lifestyle-banner .lifestyle-banner-inner img.mobile{
+    display: none;
+  }
+
+  .lifestyle-banner .lifestyle-banner-inner .lifestyle-banner-overlay h1{
+    color: var(--actually-white, #FFF);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 48px */
+    letter-spacing: -0.96px;
+    text-transform: uppercase;
+    margin: 0px 0px 32px 0px;
+  }
+
+  .lifestyle-banner .lifestyle-banner-inner .lifestyle-banner-overlay button{
+    display: flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 44px;
+    background: #FFF;
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    float: right;
+  }
+
+  @media(min-width: 769px) and (max-width: 1023px){
+    .lifestyle-banner .lifestyle-banner-inner .lifestyle-banner-overlay{
+      left: 40px;
+      bottom: 40px;
+    }
+  }
+
+  @media(max-width: 768px){
+    .lifestyle-banner .lifestyle-banner-inner img.desktop{
+      display: none;
+    }
+
+    .lifestyle-banner .lifestyle-banner-inner img.mobile{
+      display: block;
+    }
+
+    .lifestyle-banner .lifestyle-banner-inner .lifestyle-banner-overlay {
+      left: 0px;
+      bottom: 0;
+      z-index: 999;
+      top: 40px;
+      padding: 0px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: stretch;
+      width: 100%;
+    }
+
+    .lifestyle-banner .lifestyle-banner-inner .lifestyle-banner-overlay h1{
+      color: #FFF;
+      text-align: center;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%; /* 24px */
+      text-transform: uppercase;
+      margin: 0px 0px 16px 0px;
+      max-width: 260px;
+    }
+
+    .lifestyle-banner .lifestyle-banner-inner .lifestyle-banner-overlay br{
+      display: none;
+    }
+  }
+</style>
+
